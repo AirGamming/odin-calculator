@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+body{
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}#container{
+    display: grid;
+    grid-column: span4;
+    grid-template-columns: repeat(4,1fr);
+    background: white;
+    height: 75vh;
+    min-width: 70vh;
+    gap: 20px;
+    padding: 20px;
+}.button[data-number="="]{
+    grid-column: span 2;
+}.button{
+    display: flex;
+    align-items: center;
+}.button>p{
+    text-align: center;
+    width: 100%;
+}.calculations{
+    grid-column: span 4;
+}.ui{
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 900;
+}
