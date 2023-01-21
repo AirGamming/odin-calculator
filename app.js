@@ -1,5 +1,5 @@
 let equals = 0
-let equasion = 0
+let equasion = ""
 const ButtonsWithOrder = [
     1,2,3,"+",
     4,5,6,"-",
@@ -16,10 +16,18 @@ ButtonsWithOrder.forEach(el => {
     container.appendChild(div);
 });
 
+let calculate = ()=> {
+
+}
+
 let buttons = container.querySelectorAll(".button");
 buttons.forEach(el => {
     el.addEventListener("click",() =>{
         let atribute = el.getAttribute("data-number")
-        console.log(atribute)
+        if(atribute == "=") calculate()
+        else equasion = equasion+atribute
+        console.log(equasion)
+        p= document.querySelector('.calculations > p')
+        p.innerHTML = equasion
     })
 });

@@ -5,15 +5,19 @@ body{
     align-items: center;
     justify-content: center;
     height: 100vh;
+    padding: 0;
+    margin: 0;
 }#container{
     display: grid;
     grid-column: span4;
     grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(5,1fr);
     background: white;
     height: 75vh;
     min-width: 70vh;
     gap: 20px;
     padding: 20px;
+    border-radius: 20px;
 }.button[data-number="="]{
     grid-column: span 2;
 }.button{
@@ -24,7 +28,20 @@ body{
     width: 100%;
 }.calculations{
     grid-column: span 4;
+    padding: 20px;
+
 }.ui{
     font-family: 'Roboto Mono', monospace;
     font-weight: 900;
+    background-color: #dddddd;
+    border-radius: 50px;
+    box-shadow:
+    
+    1px 1px 10px 1px#dddddddd ;
+}.ui:hover{
+    box-shadow: 1px 1px 12px 1px #5d5d5d ;
+    scale: 1.1;
+}.calculations:hover{
+    box-shadow: 1px 1px 10px 1px#dddddddd;
+    scale: 1;
 }
