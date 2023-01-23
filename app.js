@@ -6,6 +6,7 @@ const ButtonsWithOrder = [
     7,8,9,"*",
     "=",0,"/"
 ];
+const symbols = ["-", "/", "*", "+"]
 const container = document.querySelector("#container"); 
 
 ButtonsWithOrder.forEach(el => {
@@ -17,16 +18,21 @@ ButtonsWithOrder.forEach(el => {
 });
 
 let calculate = ()=> {
-
+    let equalsContainer = document.querySelector(".calculations > h1");
+    equasion.split
 }
-
+let lastCharacter = (str) =>{
+    return str.charAt(str.length - 1)
+}
+console.log(equasion)
 let buttons = container.querySelectorAll(".button");
 buttons.forEach(el => {
     el.addEventListener("click",() =>{
         let atribute = el.getAttribute("data-number")
-        if(atribute == "=") calculate()
+        if(atribute == "=") {calculate();}
+        // FIXME:
+        else if(lastCharacter(equasion) in symbols && atribute in symbols) {console.log(atribute)}
         else equasion = equasion+atribute
-        console.log(equasion)
         p= document.querySelector('.calculations > p')
         p.innerHTML = equasion
     })
