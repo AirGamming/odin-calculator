@@ -18,8 +18,23 @@ ButtonsWithOrder.forEach(el => {
 });
 
 let calculate = ()=> {
-    let equalsContainer = document.querySelector(".calculations > h1");
-    equasion.split
+    let equals = 0
+    let equasion = ""
+    let p = document.querySelector('.calculations > p')
+    let numbers = p.innerHTML.split(/[-+*/]/)
+    let Symbols = p.innerHTML.split(/[0-9]/)
+    Symbols = Symbols.filter(el => el != "")
+    let equalsDiv = document.querySelector('.calculations > h1')
+    numbers.forEach((el, i) => {
+        if(i == 0) equals = Number(el)
+        else if (Symbols[i-1] == "+") equals = equals + Number(el)
+        else if (Symbols[i-1] == "-") equals = equals - Number(el)
+        else if (Symbols[i-1] == "*") equals = equals * Number(el)
+        else if (Symbols[i-1] == "/") equals = equals / Number(el)
+    })
+    equalsDiv.innerHTML = equals
+    console.log("numbers: " + numbers)
+    console.log("equals: " + equals)
 }
 let lastCharacter = (str) =>{
     return str.charAt(str.length - 1)
@@ -29,9 +44,11 @@ let buttons = container.querySelectorAll(".button");
 buttons.forEach(el => {
     el.addEventListener("click",() =>{
         let atribute = el.getAttribute("data-number")
-        if(atribute == "=") {calculate();}
-        // FIXME:
-        else if(lastCharacter(equasion) in symbols && atribute in symbols) {console.log(atribute)}
+        if(atribute == "=") calculate()
+        else if(symbols.includes(atribute) && symbols.includes(lastCharacter(equasion)) ) {
+            console.log(typeof(lastCharacter(equasion)) + " " + typeof symbols[1])
+            console.log(atribute)
+        }
         else equasion = equasion+atribute
         p= document.querySelector('.calculations > p')
         p.innerHTML = equasion

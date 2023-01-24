@@ -23,6 +23,8 @@ body{
 }.button{
     display: flex;
     align-items: center;
+    -webkit-user-select: none;
+    user-select: none;
 }.button>p{
     text-align: center;
     width: 100%;
